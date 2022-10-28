@@ -31,9 +31,9 @@ namespace DesignPatterns.Command.V1
         {
             // The client code can parameterize an invoker with any commands.
             IInvoker waiter = new WaiterInvoker();
-            IReceiver bartender = new CookReceiver();
+            IReceiver cook = new CookReceiver();
 
-            waiter.WhenYouStart(new OrderFoodCommand(bartender, "Foie gras"));
+            waiter.WhenYouStart(new OrderFoodCommand(cook, "Foie gras"));
             waiter.WhenYouFinish(new DeliverOrderCommand());
 
             waiter.FulfillMyOrder();
